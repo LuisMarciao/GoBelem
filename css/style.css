@@ -1,0 +1,517 @@
+/* Reset e Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+header {
+  background: url('../img/Fundo.jpg');
+  background-color: #114C29;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f39c12;
+}
+
+
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hero Section */
+
+.hero-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 187, 0, 0.423);  
+  mix-blend-mode: multiply;  
+  z-index: 1;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/Belém2.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 1200;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e67e22;
+}
+
+/* Sections comuns */
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color: #D4A017;
+}
+
+/* About Section */
+.about p {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+}
+
+.stat-item i {
+  font-size: 2.5rem;
+  color: #f39c12;
+  margin-bottom: 15px;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Features Section */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+}
+
+.feature-item i {
+  font-size: 3rem;
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.feature-item p {
+  color: #7f8c8d;
+}
+
+/* Tours Section */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.tour-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour-card:hover {
+  transform: translateY(-10px);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tour-card h3 {
+  padding: 20px 20px 10px;
+  color: #2c3e50;
+}
+
+.tour-card p {
+  padding: 0 20px 20px;
+  color: #7f8c8d;
+}
+
+.points {
+  display: block;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Download Section */
+.download {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+}
+
+.download h2 {
+  color: white;
+}
+
+.download p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  color: #2c3e50;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.btn-app:hover {
+  transform: scale(1.05);
+}
+
+.btn-app i {
+  font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #34495e;
+  color: white;
+  padding: 60px 0 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f39c12;
+}
+
+.footer-section p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+/* Estilos para os Modais */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modal input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.modal-link a {
+  color: #f39c12;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modal-link a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsiva pela rolagem da pagina */
+header.scrolled {
+  padding: 10px 0 !important; 
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.95);
+  transition: all 0.3s ease; /* Suaviza a animação */
+}
+
+@media (max-width: 768px) {
+  header.scrolled {
+      padding: 5px 0 !important;
+  }
+}
+
+header.scrolled .logo img {
+  height: 60px; /* Reduz a imagem */
+  width: 60px; /* Reduz a imagem */
+}
+
+header.scrolled .logo h1 {
+  font-size: 0.9rem; /* Reduz o texto */
+}
+
+header.scrolled nav a {
+  font-size: 0.9rem; /* Links menores */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header .container {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .hero h2 {
+      font-size: 2rem;
+  }
+
+  .hero p {
+      font-size: 1rem;
+  }
+
+  section {
+      padding: 60px 0;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+}
+
+.pesquisa-recompensas {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#pesquisaRecompensas {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+
+
+
+
+
+

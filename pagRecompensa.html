@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina de recompensas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Go Belém Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pagRecompensa.html">Pagina de Recompensas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="pontosUsuario" style="
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: #ffc107;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 9999;">
+    <!-- Pontos do usuário aparecerão aqui -->
+    </div>
+
+    <section class="hero">
+        <div class="hero-filter"></div> <!--Filtro para a imagem-->
+        <div class="container">
+            <h2>Recompensas</h2>
+            <p>Ganhe recompensas ao completar desafios e explorar Belém!</p>
+            <a href="#download" class="btn">Baixe o App</a>
+        </div>
+    </section>
+    <section class="pesquisa-recompensas">
+    <div class="container">
+        <input type="text" id="pesquisaRecompensas" placeholder="Pesquisar recompensas...">
+    </div>
+</section>
+
+    <section class = "recompensas">
+        <section class="recompensas">
+            <div class="container">
+                <img src="img/reward1.png" alt="Recompensa 1">
+                <h3>Desconto em Restaurantes</h3>
+                <p>Ganhe 10% de desconto em restaurantes parceiros.</p>
+                <p>500 Pontos</p>
+                <button class="btn resgatar" data-pontos="500">Resgatar</button>
+            </div>
+            <div class="container">
+                <img src="img/reward2.png" alt="Recompensa 2">
+                <h3>Tour Guiado Gratuito</h3>
+                <p>Participe de um tour guiado gratuito pelos principais pontos turísticos.</p>
+                <p>1000 Pontos</p>
+                <button class="btn resgatar" data-pontos="1000">Resgatar</button>
+            </div>
+</section>
+<p id="mensagemPesquisa" style="display:none; text-align:center; font-weight:bold; margin-top:20px;">Recompensa indisponível</p>
+
+<section class="recompensas-resgatadas">
+    <div class="container">
+        <h2>Recompensas Resgatadas</h2>
+        <div id="recompensasResgatadasList">
+            <!-- Aqui aparecerão as recompensas que o usuário resgatou -->
+        </div>
+    </div>
+</section>
+
+    </section>
+    <script src="Script/script.js"></script>
+</body>
+</html>

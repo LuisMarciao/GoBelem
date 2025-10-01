@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Belém - Turismo Gamificado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Go Belém Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#roteiros">Roteiros</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#cadastro" class="show-register-link">Cadastro</a></li>
+                    <li><a href="#login" class="show-login-link">Login</a></li>
+                    <li><a href="pagRecompensa.html">Pagina de Recompensas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="pontosUsuario" style="
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: #ffc107;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 9999;
+">
+    </div>
+    <section class="hero">
+        <div class="hero-filter"></div> <!--Filtro para a imagem-->
+        <div class="container">
+            <h2>Explore Belém no seu tempo</h2>
+            <p>Explore a cultura, história e gastronomia de Belém através de desafios e recompensas!</p>
+            <a href="#download" class="btn">Baixe o App</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre o Projeto</h2>
+            <p>O Go Belém é um aplicativo de turismo gamificado desenvolvido para promover a cidade de Belém do Pará, especialmente durante a COP30 em 2025. Nosso objetivo é conectar turistas com a cultura local e pequenos empreendedores através de uma experiência interativa e divertida.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>50+</h3>
+                    <p>Pontos turísticos</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-store"></i>
+                    <h3>100+</h3>
+                    <p>Empreendedores locais</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3>30+</h3>
+                    <p>Desafios disponíveis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funcionalidades" class="features">
+        <div class="container">
+            <h2>Funcionalidades</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gamificação</h3>
+                    <p>Complete desafios, ganhe pontos e suba no ranking dos exploradores de Belém.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-map-pin"></i>
+                    <h3>Geolocalização</h3>
+                    <p>Descubra atrações próximas e receba informações relevantes quando estiver no local.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-route"></i>
+                    <h3>Roteiros Temáticos</h3>
+                    <p>Explore trilhas culturais, gastronômicas e históricas personalizadas.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-gift"></i>
+                    <h3>Recompensas</h3>
+                    <p>Ganhe descontos e benefícios em estabelecimentos locais ao completar missões.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roteiros" class="tours">
+        <div class="container">
+            <h2>Roteiros Populares</h2>
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <img src="img/Pontos/Ver-oPeso-Belem.jpg" alt="Ver-o-Peso">
+                    <h3>Circuito Ver-o-Peso</h3>
+                    <p>Explore o famoso mercado e descubra os sabores da Amazônia.</p>
+                    <span class="points">250 pontos</span>
+                </div>
+                <div class="tour-card">
+                    <img src="img/Pontos/Cidade-Velha.jpg" alt="Cidade Velha">
+                    <h3>História da Cidade Velha</h3>
+                    <p>Conheça os principais monumentos históricos de Belém.</p>
+                    <span class="points">300 pontos</span>
+                </div>
+                <div class="tour-card">
+                    <img src="img/Pontos/Estacao-doca.jpg" alt="Estação das Docas">
+                    <h3>Gastronomia na Estação</h3>
+                    <p>Deguste a culinária paraense em um dos pontos mais charmosos da cidade.</p>
+                    <span class="points">200 pontos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Baixe o App</h2>
+            <img src="img/logo.png" alt="Aplicativo" width="15%" height="15%">
+            <p>Disponível em breve na App Store e Google Play</p>
+            <div class="download-buttons">
+                <a href="#" class="btn-app"><i class="fab fa-apple"></i> App Store</a>
+                <a href="#" class="btn-app"><i class="fab fa-google-play"></i> Google Play</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Go Belém</h3>
+                    <p>Promovendo o turismo sustentável e a cultura de Belém através da gamificação.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> Gobelem@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (91) 98524-6793</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Go Belém - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form class="login-form">
+        <label for="login-email">E-mail:</label>
+        <input type="email" id="login-email" required>
+        
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" required>
+        
+        <button type="submit" class="btn">Entrar</button>
+        <p class="modal-link">Não tem conta? <a href="#" class="show-register">Cadastre-se</a></p>
+        </form>
+    </div>
+    </div>
+
+    <!-- Registro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span 
+                class="close-modal">&times;
+            </span>
+            <h2>Cadastro</h2>
+            <form class="register-form">
+                <label for="register-name">Nome:</label>
+                <input type="text" id="register-name" required>
+                
+                <label for="register-email">E-mail:</label>
+                <input type="email" id="register-email" required>
+                
+                <label for="register-password">Senha:</label>
+                <input type="password" id="register-password" required>
+                
+                <button type="submit" class="btn">Cadastrar</button>
+                <p class="modal-link">Já tem conta? <a href="#" class="show-login">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="Script/script.js"></script>
+</body>
+</html>
