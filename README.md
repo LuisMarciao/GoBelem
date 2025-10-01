@@ -75,22 +75,6 @@ O site inclui:
 
 ---
 
-## Pré-visualização
-
-**Página inicial:**
-![Página Inicial](img/logo.png)
-
-**Seção de recompensas:**
-![Recompensas](img/reward1.png)
-
-**Recompensas resgatadas:**
-![Resgatadas](img/reward2.png)
-
-**Pesquisa de recompensas:**
-![Pesquisa](img/reward3.png)
-
----
-
 ## Como Executar
 
 1. Clone ou faça download do repositório:
