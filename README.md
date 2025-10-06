@@ -79,4 +79,4 @@ O site inclui:
 
 1. Clone ou faça download do repositório:
    ```bash
-   git clone <link-do-repositorio>
+   git clone https://github.com/LuisMarciao/GoBelem.git
