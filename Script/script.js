@@ -1,3 +1,35 @@
+
+// Bloqueio de acesso à página de recompensas
+(function () {
+  try {
+    const filename = window.location.pathname.split('/').pop().toLowerCase();
+
+    // só aplica quando o nome do arquivo contém "recompensa"
+    if (!filename || !filename.includes('recompensa')) return;
+
+    // chaves que podemos verificar no localStorage (inclui 'usuarioLogado' usado no seu script)
+    const possibleKeys = ['usuarioLogado', 'loggedUser', 'user', 'usuario'];
+
+    let logged = null;
+    for (const k of possibleKeys) {
+      const raw = localStorage.getItem(k);
+      if (!raw) continue;
+      try { logged = JSON.parse(raw); break; } catch (err) { /* ignora parsing error */ }
+    }
+
+    if (!logged) {
+      alert('⚠️ Você precisa estar logado para acessar a página de recompensas!');
+      // tenta redirecionar para index.html no mesmo diretório
+      const base = window.location.pathname.replace(/\/[^\/]*$/, '/');
+      window.location.href = base + 'index.html';
+    }
+  } catch (err) {
+    // se der algum erro inesperado, redireciona também (fallback)
+    alert('⚠️ Acesso restrito: você precisa estar logado.');
+    window.location.href = 'index.html';
+  }
+})();
+
 // Efeito de rolagem suave para links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

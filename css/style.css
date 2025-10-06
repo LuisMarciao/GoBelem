@@ -509,6 +509,13 @@ header.scrolled nav a {
     font-size: 16px;
 }
 
+.user-info {
+    text-align: right;
+    margin: 10px 20px;
+    font-weight: bold;
+}
+
+
 
 
 
