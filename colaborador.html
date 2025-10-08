@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Colaborador - Go Belém</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1>Painel do Colaborador</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Bem-vindo ao Painel de Gestão</h2>
+        <p>Gerencie recompensas, pontos e informações dos usuários.</p>
+
+        <button id="sairColab" class="btn">Sair</button>
+    </main>
+
+    <script>
+    // Verifica se está logado
+    const colab = JSON.parse(localStorage.getItem("colaboradorLogado"));
+    if (!colab) {
+        alert("Acesso restrito! Faça login como colaborador.");
+        window.location.href = "index.html";
+    }
+
+    document.getElementById("sairColab").addEventListener("click", () => {
+        localStorage.removeItem("colaboradorLogado");
+        window.location.href = "index.html";
+    });
+    </script>
+</body>
+</html>

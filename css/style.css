@@ -193,6 +193,118 @@ h2 {
   margin: 0;
 }
 
+/* Contêiner alinhado */
+.map-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* sem espaço entre input e botões */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Caixa de busca */
+#place-search {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  border-radius: 30px 0 0 30px; /* arredonda só a esquerda */
+  background-color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+
+#place-search:focus {
+  outline: none;
+  border-color: #D4A017;
+  box-shadow: 0 6px 18px rgba(212,160,23,0.12);
+}
+
+/* Botões grudados ao lado */
+.map-controls .btn {
+  border-radius: 0; /* zera o arredondamento */
+  padding: 12px 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  border-left: none; /* cola no input */
+}
+
+/* Primeiro botão (Adicionar) */
+#addPoint {
+  border-radius: 0; /* quadrado no meio */
+}
+
+/* Último botão (Limpar) */
+#clearPoints {
+  border-radius: 0 30px 30px 0; /* arredonda só a direita */
+  background: #bdc3c7 !important;
+  color: #2c3e50 !important;
+}
+#clearPoints:hover {
+  background: #95a5a6 !important;
+}
+
+/* Responsivo: em telas pequenas quebra a linha */
+@media (max-width: 768px) {
+  .map-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #place-search {
+    border-radius: 30px;
+    border: 1px solid #ddd;
+  }
+  .map-controls .btn {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+  }
+}
+
+#mapa h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #D4A017;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#mapa .texto {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 25px; /* centraliza e dá espaçamento */
+  line-height: 1.6;
+}
+
+#tracarRota {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 16px 40px; /* aumenta altura e largura */
+  font-size: 1.2rem;  /* fonte maior */
+  font-weight: 700;
+  border-radius: 40px;
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#tracarRota:hover {
+  background-color: #e67e22;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
 /* Features Section */
 .feature-grid {
   display: grid;
@@ -494,28 +606,6 @@ header.scrolled nav a {
       font-size: 2rem;
   }
 }
-
-.pesquisa-recompensas {
-    margin: 20px 0;
-    text-align: center;
-}
-
-#pesquisaRecompensas {
-    width: 80%;
-    max-width: 400px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.user-info {
-    text-align: right;
-    margin: 10px 20px;
-    font-weight: bold;
-}
-
-
 
 
 

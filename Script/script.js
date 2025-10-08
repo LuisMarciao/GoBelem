@@ -327,5 +327,144 @@ if (inputPesquisa) {
         }
     });
 }
+// ============================
+// Login de Colaboradores
+// ============================
+document.addEventListener("DOMContentLoaded", function() {
+  const loginColabModal = document.getElementById('loginColabModal');
+
+  // Abrir modal de colaborador
+  document.querySelectorAll('.show-login-colab-link').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      loginColabModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Fechar modal
+  loginColabModal.querySelector('.close-modal').addEventListener('click', () => {
+    loginColabModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  window.addEventListener('click', e => {
+    if (e.target === loginColabModal) {
+      loginColabModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Cadastrando ADM
+  if (!localStorage.getItem("colaboradores")) {
+    const colaboradoresPadrao = [
+      { nome: "adm1", email: "adm1@gobelem.com", senha: "12345" },
+      { nome: "adm2", email: "adm2@gobelem.com", senha: "senha123" }
+    ];
+    localStorage.setItem("colaboradores", JSON.stringify(colaboradoresPadrao));
+  }
+
+
+  // Login de colaborador
+  document.querySelector(".login-colab-form")?.addEventListener("submit", function(e){
+    e.preventDefault();
+    const email = document.getElementById("colab-email").value.trim().toLowerCase();
+    const senha = document.getElementById("colab-password").value.trim();
+
+    const colaboradores = JSON.parse(localStorage.getItem("colaboradores")) || [];
+    const colaborador = colaboradores.find(c => c.email === email && c.senha === senha);
+
+    if (colaborador) {
+      alert(`Bem-vindo, ${colaborador.nome}!`);
+      localStorage.setItem("colaboradorLogado", JSON.stringify(colaborador));
+      this.reset();
+      loginColabModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+//      window.location.href = "colaborador.html"; // redireciona para página especial
+    } else {
+      alert("E-mail ou senha incorretos!");
+    }
+  });
+});
+
+
+let map;
+let markers = [];
+let points = [];
+let routingControl;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Inicializa o mapa em Belém
+    map = L.map('map').setView([-1.4558, -48.4902], 13);
+
+    // Adiciona o mapa base (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Botão adicionar ponto
+    document.getElementById("addPoint").addEventListener("click", () => {
+        const query = document.getElementById("place-search").value.trim();
+        if (!query) {
+            alert("Digite um local para adicionar.");
+            return;
+        }
+
+        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query + ', Belém, Brasil')}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.length === 0) {
+                    alert("Local não encontrado. Tente outro nome.");
+                    return;
+                }
+
+                const place = data[0];
+                const lat = parseFloat(place.lat);
+                const lon = parseFloat(place.lon);
+
+                points.push([lat, lon]);
+                addPointToList(place.display_name);
+
+                const marker = L.marker([lat, lon]).addTo(map);
+                markers.push(marker);
+
+                map.setView([lat, lon], 14);
+            })
+            .catch(() => alert("Erro ao buscar o local."));
+    });
+
+    // Botão limpar
+    document.getElementById("clearPoints").addEventListener("click", () => {
+        points = [];
+        markers.forEach(m => map.removeLayer(m));
+        markers = [];
+        document.getElementById("pointsList").innerHTML = "";
+        if (routingControl) map.removeControl(routingControl);
+    });
+
+    // Botão traçar rota
+    document.getElementById("tracarRota").addEventListener("click", () => {
+        if (points.length < 2) {
+            alert("Adicione pelo menos dois pontos para traçar a rota.");
+            return;
+        }
+
+        if (routingControl) map.removeControl(routingControl);
+
+        routingControl = L.Routing.control({
+            waypoints: points.map(p => L.latLng(p[0], p[1])),
+            routeWhileDragging: false,
+            language: 'pt-BR'
+        }).addTo(map);
+    });
+});
+
+// Adiciona o nome do local à lista
+function addPointToList(name) {
+    const list = document.getElementById("pointsList");
+    const li = document.createElement("li");
+    li.textContent = name;
+    list.appendChild(li);
+}
 
 

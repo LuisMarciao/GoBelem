@@ -39,7 +39,7 @@
 ">
     </div>
     <section class="hero">
-        <div class="hero-filter"></div> <!--Filtro para a imagem-->
+        <div class="hero-filter"></div> 
         <div class="container">
             <h2>Explore Belém no seu tempo</h2>
             <p>Explore a cultura, história e gastronomia de Belém através de desafios e recompensas!</p>
@@ -94,6 +94,12 @@
                     <i class="fas fa-gift"></i>
                     <h3>Recompensas</h3>
                     <p>Ganhe descontos e benefícios em estabelecimentos locais ao completar missões.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-gift"></i>
+                    <h3>Rotas</h3>
+                    <p>Crie Rotas personalizadas se Baseando Nas Suas Preferencias <br>
+                    <a href="rotas.html">Crie sua Rota</a></p>
                 </div>
             </div>
         </div>
@@ -157,6 +163,15 @@
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
+                <div class="footer-section">
+                    <h3>Login parceiros</h3>
+                    <div class="social-icons">
+                        <a href="#loginColab" class="show-login-colab-link">Login Colaborador</a>
+                        <a href="adm.html">ADM</a>
+                        <a href="colaborador.html">Pagina do Colaborador</a>
+
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Go Belém - Todos os direitos reservados</p>
@@ -181,6 +196,23 @@
         </form>
     </div>
     </div>
+
+    <div id="loginColabModal" class="modal">
+    <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Login de Colaborador</h2>
+    <form class="login-colab-form">
+        <label for="colab-email">E-mail:</label>
+        <input type="email" id="colab-email" required>
+
+        <label for="colab-password">Senha:</label>
+        <input type="password" id="colab-password" required>
+
+        <button type="submit" class="btn">Entrar</button>
+        <p class="modal-link">Acesso restrito aos colaboradores do Go Belém</p>
+    </form>
+    </div>
+</div>
 
     <!-- Registro -->
     <div id="registerModal" class="modal">

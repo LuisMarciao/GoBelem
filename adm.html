@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel ADM - GoBelém</title>
+    <link rel="stylesheet" href="css/adm.css">
+</head>
+<body>
+
+    <header>
+        <h1>Área Administrativa - GoBelém</h1>
+    </header>
+
+    <main>
+        <h2>Adicionar Novo Colaborador</h2>
+        <form id="formNovoColab">
+        <input type="text" id="nomeColab" placeholder="Nome" required>
+        <input type="email" id="emailColab" placeholder="E-mail" required>
+        <input type="password" id="senhaColab" placeholder="Senha" required>
+        <button type="submit">Adicionar</button>
+        </form>
+
+        <h3>Colaboradores Cadastrados</h3>
+        <ul id="listaColabs"></ul>
+
+        <button class="sair" id="btnSair">Sair</button>
+    </main>
+
+    <script src="Script/adm.js"></script>
+</body>
+</html>

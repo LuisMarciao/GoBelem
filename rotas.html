@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="Script/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+</head>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Go Belém Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#cadastro" class="show-register-link">Cadastro</a></li>
+                    <li><a href="#login" class="show-login-link">Login</a></li>
+                </ul>
+                </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-filter"></div>
+        <div class="container">
+            <h2>Rotas</h2>
+            <p>Crie Rotas personalizadas se Baseando Nas Suas Preferencias </p>
+        </div>
+    </section>
+
+    <section id="mapa">
+    <div class="container">
+        <h2>Monte sua Rota</h2>
+        <p class = "texto">Digite locais na busca, clique em <strong>Adicionar</strong> para montar o roteiro e em <strong>Traçar Rota</strong> para ver o trajeto.</p>
+        <br>
+        <div class="map-controls">
+        <input id="place-search" type="text" placeholder="Procure um ponto turístico, endereço ou estabelecimento..."/>
+        <button id="addPoint" class="btn">Adicionar</button>
+        <button id="clearPoints" class="btn" style="background:#bdc3c7; margin-left:8px;">Limpar</button>
+        </div>
+
+        <div class="points-wrapper">
+        <ul id="pointsList" aria-live="polite"></ul>
+        </div>
+    
+        <div id="map" style="height: 450px; width: 100%; margin-top:15px;"></div>
+    
+        <div style="text-align:center; margin-top:15px;">
+        <button id="tracarRota" class="btn">Traçar Rota</button>
+        </div>
+    </div>
+    </section>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
